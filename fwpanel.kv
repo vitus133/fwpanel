@@ -1,0 +1,63 @@
+<Label>:
+  font_name: 'Roboto'
+  font_size: 60
+  markup: True
+<RobotoButton@ToggleButton>:
+  font_name: 'Roboto'
+  font_size: 25
+  bold: True
+
+FwPanelLayout:
+  time_prop: time
+  orientation: 'vertical'
+  Label:
+    id: time
+    text: '[b]00[/b]:00:00'
+
+  BoxLayout:
+    height: 90
+    orientation: 'horizontal'
+    padding: 20
+    spacing: 20
+    size_hint: (1, None)
+
+    RobotoButton:
+      id: connect
+      text: 'Connect'
+
+
+
+  BoxLayout:
+    height: 90
+    orientation: 'vertical'
+    BoxLayout:
+      height: 90
+      orientation: 'horizontal'
+      padding: 20
+      spacing: 20
+      size_hint: (1, None)
+      Label:
+        id: user_grp_1
+        font_size: 25
+        text: 'Allow Kids Internet'
+        bold: True
+      Switch:
+        id: sw1
+        disabled: True
+        on_active: app.toggle_kids()
+    BoxLayout:
+      height: 90
+      orientation: 'horizontal'
+      padding: 20
+      spacing: 20
+      size_hint: (1, None)
+      Label:
+        id: user_grp_2
+        font_size: 25
+        bold: True
+        text: 'Allow TV Internet'
+      Switch:
+        id: sw2
+        disabled: True
+        on_active: app.toggle_tv()
+
